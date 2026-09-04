@@ -88,7 +88,7 @@ def get_project(pid: str):
 def patch_project(pid: str, payload: dict):
     db = _s()
     p = _get(db, pid)
-    for k in ("title", "geography", "start_date", "end_date", "domain", "problem", "gap", "background", "status"):
+    for k in ("title", "geography", "start_date", "end_date", "domain", "problem", "gap", "background", "status", "export_path"):
         if k in payload:
             setattr(p, k, payload[k])
     db.commit()

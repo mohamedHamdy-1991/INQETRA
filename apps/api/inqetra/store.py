@@ -55,6 +55,7 @@ class Project(Timestamped):
     problem: Mapped[str] = mapped_column(Text, default="")
     gap: Mapped[str] = mapped_column(Text, default="")
     background: Mapped[str] = mapped_column(Text, default="")
+    export_path: Mapped[str] = mapped_column(String(60), default="")
 
 
 class ResearchQuestion(Timestamped):
@@ -417,6 +418,12 @@ def engine():
         _engine = create_engine(url, poolclass=NullPool,
                                 **({"connect_args": connect_args} if connect_args else {}))
         Base.metadata.create_all(_engine)
+        from sqlalchemy import text
+        try:  # additive migration for existing databases (v0.2.2 document paths)
+            with _engine.begin() as c:
+                c.execute(text("ALTER TABLE projects ADD COLUMN export_path VARCHAR(60) DEFAULT ''"))
+        except Exception:  # column already exists
+            pass
     return _engine
 
 

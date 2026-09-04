@@ -4,7 +4,7 @@ from __future__ import annotations
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from . import admin, ai, catalogue, evaluate, harvest, inbox, jobs, kits, projects, reports, studio, thumbs
+from . import admin, ai, catalogue, evaluate, harvest, inbox, jobs, kits, paths, projects, reports, studio, thumbs
 from .bootstrap import ensure_defaults
 from .store import engine
 
@@ -21,7 +21,7 @@ app.add_middleware(CORSMiddleware, allow_origins=["*"], allow_methods=["*"], all
 
 for r in (catalogue.router, projects.router, studio.router, studio.pub, evaluate.router,
           inbox.router, reports.router, jobs.router, ai.router, admin.router,
-          harvest.router, kits.router, thumbs.router):
+          harvest.router, kits.router, thumbs.router, paths.router):
     app.include_router(r)
 
 

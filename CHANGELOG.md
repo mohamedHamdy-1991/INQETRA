@@ -2,6 +2,18 @@
 
 All notable changes. Format: Keep-a-Changelog-ish. Timestamps UTC.
 
+## [0.2.2] — 2026-09-04 — Document paths, editable abstract, custom kits, PDF exports
+
+### Added
+- **Document paths** (`/paths` + `GET /api/v1/paths[/slug]`): PhD thesis, Master's thesis, research grant, journal article, conference paper — each with section skeleton + word targets, the studio tools it leans on, and suggested ways of working. Projects store `export_path` (additive migration); abstract builder and PDF report follow the chosen path.
+- **Editable abstract builder**: drafts fully editable (`PATCH /projects/{pid}/abstract/{id}`), blank-page start (`POST …/abstract/blank`), quick-add buttons for questions/aims/methods, path skeleton with suggested sentence starters, per-draft fetch (`GET …/abstract/drafts/{id}`).
+- **Custom kits**: `POST /api/v1/kits` (create, auto-slug), `DELETE /api/v1/kits/{slug}` (customs only — built-ins protected); kit detail page has a CUSTOMISE mode (edit/add/remove questions, aims, methods, roles → SAVE AS MY KIT).
+- **Visual PDF exports**: `/projects/[id]/report/print` — Neo-Brutalist print document (brand cover, badges, section plates, dataset inventory table with domain art, coverage statuses, Harvard citations); `SAVE AS PDF` via browser print with print-color-adjust, page-break control; EXPORT PDF buttons on project report + basket report.
+
+### Fixed
+- **Custom kits invisible in `/api/v1/kits`**: catalogue.py's static-JSON `/kits` and `/sources` routes shadowed the DB-backed routers (first-registered wins in FastAPI). Removed the shadowing routes; lists now reflect created/edited records.
+- pytest 33/33 · tsc clean · build 32 routes.
+
 ## [0.2.1] — 2026-09-04 — v0.2 backend completion, full frontend wiring, home redesign, new logo/art
 
 ### Fixed

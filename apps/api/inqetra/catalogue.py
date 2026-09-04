@@ -163,18 +163,6 @@ def taxonomy():
     return json.loads(p.read_text(encoding="utf-8"))
 
 
-@router.get("/kits")
-def kits():
-    p = REPO_ROOT / "INQETRA_AI_BUILD_PACK" / "data" / "research_kits.json"
-    return {"items": json.loads(p.read_text(encoding="utf-8"))}
-
-
-@router.get("/sources")
-def sources():
-    p = REPO_ROOT / "INQETRA_AI_BUILD_PACK" / "data" / "source_registry.json"
-    return {"items": json.loads(p.read_text(encoding="utf-8"))}
-
-
 @router.get("/health")
 def health():
     for p in [REPO_ROOT / "data" / "seeds" / "link_health_summary.json",

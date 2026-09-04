@@ -75,6 +75,53 @@ def draft_abstract(pid: str, payload: dict):
     return {**_dump(d), "modes": ["proposal", "thesis", "journal", "conference", "grant", "extended", "plain"]}
 
 
+@router.get("/{pid}/abstract/drafts/{draft_id}")
+def get_abstract_draft(pid: str, draft_id: str):
+    db = session()
+    d = db.get(AbstractDraft, draft_id)
+    if not d or d.project_id != pid:
+        raise HTTPException(404, "Draft not found")
+    return _dump(d)
+
+
+@router.patch("/{pid}/abstract/{draft_id}")
+def edit_abstract(pid: str, draft_id: str, payload: dict):
+    """Researcher edits the draft text — their words, stored verbatim, still traceable."""
+    db = session()
+    d = db.get(AbstractDraft, draft_id)
+    if not d or d.project_id != pid:
+        raise HTTPException(404, "Draft not found")
+    if "text" in payload and str(payload["text"]).strip():
+        d.text = str(payload["text"]).strip()
+    if "mode" in payload and payload["mode"]:
+        d.mode = str(payload["mode"])
+    if "word_limit" in payload:
+        try:
+            d.word_limit = max(50, min(2000, int(payload["word_limit"])))
+        except (TypeError, ValueError):
+            pass
+    d.updated_at = datetime.now(timezone.utc)
+    db.commit()
+    db.refresh(d)
+    return {**_dump(d), "edited": True}
+
+
+@router.post("/{pid}/abstract/blank")
+def blank_abstract(pid: str, payload: dict | None = None):
+    """Start from an empty page: a draft the researcher writes themselves."""
+    db = session()
+    p = db.get(Project, pid)
+    if not p:
+        raise HTTPException(404, "Project not found")
+    mode = (payload or {}).get("mode", "custom")
+    limit = int((payload or {}).get("word_limit", 300))
+    d = AbstractDraft(project_id=pid, mode=mode, word_limit=limit, text="", traces=[{"text": "researcher-authored", "sources": [f"project:{pid}/author"]}])
+    db.add(d)
+    db.commit()
+    db.refresh(d)
+    return _dump(d)
+
+
 @router.get("/{pid}/abstract/traces")
 def abstract_traces(pid: str):
     db = session()

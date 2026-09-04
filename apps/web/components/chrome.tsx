@@ -8,7 +8,7 @@ import { api } from "../lib/api";
 const NAV: [string, string][] = [
   ["/", "HOME"], ["/datasets", "EXPLORE DATA"], ["/datasets/all", "ALL DATA (A–Z)"],
   ["/map", "DATA MAP"], ["/compare", "COMPARE"], ["/kits", "KITS"],
-  ["/sources", "SOURCES"], ["/publishers", "PUBLISHERS"], ["/projects", "MY PROJECTS"],
+  ["/sources", "SOURCES"], ["/publishers", "PUBLISHERS"], ["/paths", "PATHS"], ["/projects", "MY PROJECTS"],
   ["/basket", "BASKET"], ["/methodology", "METHODOLOGY"],
   ["/about", "ABOUT & DATA METHOD"], ["/developers", "API"], ["/admin", "ADMIN"],
 ];

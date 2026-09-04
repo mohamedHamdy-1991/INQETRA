@@ -154,6 +154,11 @@ export default function BasketReport() {
         <p className="warn">Declared access/licence strings only — open each landing page and confirm entitlement before reuse. Reachability ≠ permission.</p>
       </div>
 
+      <div className="nb-card no-print">
+        <h2>Export this report</h2>
+        <button className="nb-btn orange" style={{ background: "var(--nb-orange)" }} onClick={() => window.print()}>SAVE AS PDF (PRINT) →</button>
+      </div>
+
       {pid && (
         <div className="nb-card pop-in">
           <h2>5 · Generate the plan</h2>

@@ -40,6 +40,42 @@ def kit_detail(slug: str):
     raise HTTPException(404, "Kit not found")
 
 
+@router.post("")
+def create_custom_kit(payload: dict):
+    """Create a custom kit (e.g. customised from a built-in one). graph.custom marks provenance."""
+    db = session()
+    base_slug = str(payload.get("slug") or payload.get("title") or "my-kit").strip().lower()
+    import re as _re
+    slug = _re.sub(r"[^a-z0-9]+", "-", base_slug).strip("-")[:110] or "my-kit"
+    if db.query(ResearchKit).filter_by(slug=slug).first():
+        i = 2
+        while db.query(ResearchKit).filter_by(slug=f"{slug}-{i}").first():
+            i += 1
+        slug = f"{slug}-{i}"
+    graph = payload.get("graph") or {}
+    graph = {**graph, "custom": True}
+    k = ResearchKit(slug=slug, title=str(payload.get("title") or "My kit")[:300],
+                    version=str(payload.get("version") or "1.0"), graph=graph)
+    db.add(k)
+    db.commit()
+    db.refresh(k)
+    return _dump(k)
+
+
+@router.delete("/{slug}")
+def delete_custom_kit(slug: str):
+    """Only custom kits can be deleted — built-in seeds stay."""
+    db = session()
+    k = db.query(ResearchKit).filter_by(slug=slug).first()
+    if not k:
+        raise HTTPException(404, "Kit not found")
+    if not (k.graph or {}).get("custom"):
+        raise HTTPException(400, "Built-in kits cannot be deleted")
+    db.delete(k)
+    db.commit()
+    return {"removed": slug}
+
+
 @router.post("/{slug}/instantiate")
 def instantiate(slug: str, payload: dict | None = None):
     payload = payload or {}
