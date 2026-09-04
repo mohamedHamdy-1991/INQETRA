@@ -1,0 +1,11 @@
+:root{
+  --nb-bg:#F6E8D2;--nb-surface:#FBFAF6;--nb-ink:#161616;
+  --nb-yellow:#FCDD28;--nb-orange:#F36D30;--nb-pink:#FF4F85;
+  --nb-cyan:#12C8B0;--nb-violet:#8167F5;--nb-green:#4BD14A;--nb-muted:#D8CCB9;
+  --nb-border-1:1px solid var(--nb-ink);--nb-border-2:2px solid var(--nb-ink);--nb-border-3:3px solid var(--nb-ink);
+  --nb-shadow-sm:3px 3px 0 var(--nb-ink);--nb-shadow-md:5px 5px 0 var(--nb-ink);--nb-shadow-lg:8px 8px 0 var(--nb-ink);
+  --nb-radius-sm:4px;--nb-radius-md:8px;
+  --nb-space-1:4px;--nb-space-2:8px;--nb-space-3:12px;--nb-space-4:16px;--nb-space-5:24px;--nb-space-6:32px;--nb-space-7:40px;--nb-space-8:48px;--nb-space-9:64px;--nb-space-10:80px;
+  --nb-font-display:"Arial Black","Helvetica Neue",Arial,sans-serif;--nb-font-body:Inter,Arial,sans-serif;--nb-font-mono:"IBM Plex Mono","SFMono-Regular",Consolas,monospace;
+  --nb-focus:3px solid var(--nb-violet);
+}

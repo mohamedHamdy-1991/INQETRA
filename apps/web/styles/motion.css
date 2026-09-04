@@ -1,0 +1,28 @@
+/* INQETRA motion layer: simple, physical, fast (100-350ms). Disabled under reduced motion. */
+@keyframes nb-rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+@keyframes nb-pop{0%{transform:scale(.96)}60%{transform:scale(1.01)}100%{transform:scale(1)}}
+@keyframes nb-slidein{from{transform:translateX(24px);opacity:0}to{transform:none;opacity:1}}
+@keyframes nb-shimmer{from{background-position:-400px 0}to{background-position:400px 0}}
+@keyframes nb-bar{from{width:0}to{width:var(--w,50%)}}
+.reveal{opacity:1}
+.js .reveal{opacity:0}
+.js .reveal.in{animation:nb-rise .32s ease-out forwards;animation-delay:var(--d,0s)}
+.pop-in{animation:nb-pop .22s ease-out}
+.drawer-slide{animation:nb-slidein .22s ease-out}
+.skel{background:linear-gradient(90deg,var(--nb-muted) 25%,var(--nb-surface) 50%,var(--nb-muted) 75%);background-size:800px 100%;animation:nb-shimmer 1.2s linear infinite;border:var(--nb-border-2);min-height:120px}
+.fillbar{height:14px;border:var(--nb-border-2);background:#fff;position:relative}
+.fillbar>i{display:block;height:100%;background:var(--nb-green);width:var(--w,0%);animation:nb-bar .5s ease-out}
+.hero-h{overflow:hidden;white-space:nowrap}
+.hero-h>span{display:inline-block;animation:nb-rise .4s ease-out backwards}
+.hero-h>span:nth-child(2){animation-delay:.08s}
+.nb-btn{transition:transform .12s ease,box-shadow .12s ease}
+a{transition:background .12s ease}
+.thumb figcaption{font:700 10px/1.4 var(--nb-font-mono);color:#444;margin-top:2px}
+.wizard-steps{display:flex;gap:6px;margin:12px 0}
+.wizard-steps span{flex:1;height:12px;border:var(--nb-border-2);background:#fff}
+.wizard-steps span.done{background:var(--nb-green)}
+.wizard-steps span.now{background:var(--nb-yellow);animation:nb-pop .2s ease-out}
+@media(prefers-reduced-motion:reduce){
+  .reveal{opacity:1}.reveal.in,.pop-in,.drawer-slide,.fillbar>i,.hero-h>span{animation:none!important}
+  .skel{animation:none;background:var(--nb-muted)}
+}

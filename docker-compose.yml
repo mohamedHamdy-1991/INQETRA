@@ -1,0 +1,28 @@
+services:
+  db:
+    image: postgis/postgis:16-3.4
+    environment:
+      POSTGRES_USER: inqetra
+      POSTGRES_PASSWORD: inqetra
+      POSTGRES_DB: inqetra
+    ports: ["5433:5432"]
+    volumes: [pgdata:/var/lib/postgresql/data]
+  redis:
+    image: redis:7-alpine
+    ports: ["6380:6379"]
+  api:
+    build: ./apps/api
+    environment:
+      DATABASE_URL: postgresql+psycopg2://inqetra:inqetra@db:5432/inqetra
+      INQETRA_ADMIN_TOKEN: ""
+    ports: ["8000:8000"]
+    depends_on: [db, redis]
+    volumes: ["./data:/app/data", "./INQETRA_AI_BUILD_PACK:/app/INQETRA_AI_BUILD_PACK:ro"]
+  web:
+    build: ./apps/web
+    environment:
+      NEXT_PUBLIC_API_URL: http://localhost:8000
+    ports: ["3000:3000"]
+    depends_on: [api]
+volumes:
+  pgdata: {}

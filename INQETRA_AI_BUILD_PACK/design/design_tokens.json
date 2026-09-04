@@ -1,0 +1,40 @@
+{
+  "colors": {
+    "bg": "#F6E8D2",
+    "surface": "#FBFAF6",
+    "ink": "#161616",
+    "yellow": "#FCDD28",
+    "orange": "#F36D30",
+    "pink": "#FF4F85",
+    "cyan": "#12C8B0",
+    "violet": "#8167F5",
+    "green": "#4BD14A",
+    "muted": "#D8CCB9"
+  },
+  "borders": {
+    "default": "2px solid #161616",
+    "major": "3px solid #161616",
+    "internal": "1px solid #161616"
+  },
+  "shadows": {
+    "sm": "3px 3px 0 #161616",
+    "md": "5px 5px 0 #161616",
+    "lg": "8px 8px 0 #161616"
+  },
+  "radius": {
+    "sm": 4,
+    "md": 8
+  },
+  "spacing": [
+    4,
+    8,
+    12,
+    16,
+    24,
+    32,
+    40,
+    48,
+    64,
+    80
+  ]
+}

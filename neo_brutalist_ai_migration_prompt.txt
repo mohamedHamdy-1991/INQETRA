@@ -1,0 +1,249 @@
+You are a senior product designer and front-end engineer. Redesign ALL attached HTML pages of this website into a coherent Neo-Brutalist / New-Brutalism design system. Treat the attached pages as one product, not as isolated mockups.
+
+PRIMARY OBJECTIVE
+Create a complete visual and interaction redesign while preserving the website's information architecture, content, routes, working functions, JavaScript behavior, form actions, IDs/data attributes used by scripts, accessibility semantics, and data bindings. The result must look intentionally designed from the first page to the last page, with one shared visual language.
+
+DESIGN DIRECTION
+Use a warm editorial Neo-Brutalist system:
+- Background/canvas: warm cream (#F6E8D2 or #F7EFE4)
+- Ink: near-black (#161616)
+- Primary yellow: #FCDD28
+- Orange: #F36D30
+- Coral/pink: #FF4F85
+- Turquoise: #12C8B0
+- Violet: #8167F5
+- Green: #4BD14A
+- White/surface: #FBFAF6
+- Borders: solid 2px or 3px black
+- Shadows: hard offset shadows, usually 4-8px 4-8px 0 #161616; never soft/glowing
+- Corners: mostly 0-10px; no pill-heavy UI except tags/status chips where semantically useful
+- Typography: bold grotesk/sans for display and UI; monospace for metadata, numbers, labels, timestamps, code-like values
+- No gradients, no glassmorphism, no blurred shadows, no translucent floating cards, no generic SaaS aesthetic
+- Prefer strong hierarchy, flat color fields, visible frames, large headings, direct labels, clear alignment, and playful asymmetry only when it does not harm usability.
+
+FIRST: AUDIT THE EXISTING WEBSITE
+1. Inventory every HTML page, route, navigation item, section, modal, form, table, chart, map, dashboard card, data panel, footer, and interactive control.
+2. Identify shared components and duplicated CSS.
+3. Identify all JavaScript selectors, IDs, class hooks, inline event handlers, data-* attributes, form names/actions, chart containers, map containers, and external libraries.
+4. Create a component mapping from OLD -> NEW before editing.
+5. Do not remove content or features merely to simplify the redesign.
+
+CREATE A SHARED DESIGN SYSTEM FIRST
+Add a shared token layer using CSS custom properties. At minimum define:
+--nb-bg, --nb-surface, --nb-ink, --nb-yellow, --nb-orange, --nb-pink, --nb-cyan, --nb-violet, --nb-green, --nb-muted;
+--nb-border-1, --nb-border-2, --nb-border-3;
+--nb-shadow-sm, --nb-shadow-md, --nb-shadow-lg;
+--nb-radius-sm, --nb-radius-md;
+--nb-space-1 through --nb-space-10;
+--nb-font-display, --nb-font-body, --nb-font-mono;
+--nb-focus.
+Use the same tokens on every page. Do not invent unrelated palettes per page.
+
+APP SHELL AND NAVIGATION
+Desktop:
+- Use a persistent left navigation or top+left hybrid when the product is dashboard-heavy.
+- Sidebar width around 220-260px, warm surface, 2px right border.
+- Each navigation item is a framed rectangle; active item uses black fill with light text OR yellow fill with black text.
+- Use small uppercase/monospace section labels.
+- Header/search row has a 2px bottom border.
+- Search input is a rectangular framed field with strong icon and no soft shadow.
+Mobile:
+- Collapse sidebar into a menu/drawer.
+- Keep primary actions visible in a bottom nav or compact top bar where appropriate.
+- Minimum target size 44x44px.
+
+LAYOUT
+- Use an 8px base spacing rhythm.
+- Max content width generally 1440px; dense tools may use full width.
+- Desktop grid: 12 columns; card gaps 16-24px.
+- Use explicit framed sections rather than floating unbounded content.
+- Prefer asymmetric dashboard compositions only when reading order remains obvious.
+- At 1024px reduce columns; at 768px switch most dashboards to 1-2 columns; at 480px use one column.
+
+TYPOGRAPHY
+- H1: 40-64px desktop, 34-44px mobile; 700-900 weight; tight line-height 0.95-1.05.
+- H2: 28-40px; H3: 20-28px.
+- Body: 15-18px, line-height 1.45-1.65.
+- UI labels: 12-14px, often uppercase or monospace.
+- Data/KPI values: monospace or tabular numerals.
+- Never rely on font weight alone for hierarchy; also use size, framing, color blocks, and spacing.
+
+CORE COMPONENTS
+Buttons:
+- Rectangular, 2px black border, 4-6px hard shadow.
+- Primary: yellow or orange fill, black text.
+- Secondary: warm white/cream fill.
+- Destructive: coral/red family with accessible contrast.
+- Hover: translate(-1px,-1px), shadow grows slightly.
+- Active: translate(3px,3px), shadow collapses to 1-2px.
+- Focus-visible: 3px outline, 2px offset.
+
+Cards/Panels:
+- 2px black border, white or accent fill, 5-8px hard shadow.
+- Use strong title strip or clear top row.
+- Avoid excessive nesting. A card inside a card needs a functional reason.
+- KPI cards can use a single accent fill and very large numeric value.
+
+Inputs/Forms:
+- 2px black border, cream/white fill, 44-52px height.
+- Labels above controls; helper/error text below.
+- Checkbox/radio controls should be visibly framed and large enough to click.
+- Invalid states use coral/red border plus text/icon, not color alone.
+
+Tabs/Chips:
+- Use framed rectangular tabs; active tab can be black, yellow, or orange.
+- Chips are compact and may be lightly rounded, but retain 1.5-2px border.
+
+Tables/Data Grids:
+- Outer 2px black border.
+- Strong header row using yellow/cream/black.
+- 1px row rules; avoid zebra striping unless needed for large datasets.
+- Numeric columns right-aligned with tabular numerals.
+- Sticky header for long tables.
+- Selected row: yellow or cyan fill with black outline.
+
+Modals/Drawers:
+- Opaque backdrop (no glass blur).
+- Modal has 3px border and 8px hard shadow.
+- Header/footer separated by rules.
+
+Tooltips/Toasts:
+- Small framed black or accent boxes with high contrast.
+- No floating translucent bubbles.
+
+CHART DESIGN SYSTEM
+Restyle every chart library configuration to match the UI.
+- Chart container: 2px black border; hard shadow only at container level.
+- Plot background: off-white/cream.
+- Axes: black, 1.5-2px.
+- Gridlines: subtle warm gray, dashed or dotted; do not overuse.
+- Series: use discrete palette colors from the system; never default rainbow gradients.
+- Line charts: 2.5-4px lines; visible markers only when needed.
+- Bars: flat fills, black 1-2px outline; square corners or <=2px radius.
+- Areas: flat 15-25% tint only if library supports print-safe alpha; no glossy gradients.
+- Legends: framed mini-labels or direct labels; place near data when possible.
+- Tooltips: cream/yellow box with 2px black border and 4px hard shadow.
+- KPI annotations: black-on-yellow or black-on-white framed labels.
+- Pie/donut charts: use sparingly; if used, 2px black segment borders and direct percentages.
+- Heatmaps: use discrete stepped bins (5-9 classes) instead of soft continuous glow.
+- Accessibility: do not encode meaning only by hue; use symbols, line styles, labels, or patterns when necessary.
+- Preserve actual values, scales, units, date formatting, interactions, zoom, filters, and export features.
+
+MAP DESIGN SYSTEM
+Keep the actual map engine (Leaflet, Mapbox GL, Google Maps, OpenLayers, ArcGIS JS, etc.) unless migration is technically necessary. Restyle controls and overlays.
+Base map aesthetic:
+- Warm cream land/background.
+- Roads: near-black major roads; muted gray minor roads.
+- Water: cyan/very light blue with black or dark outline where possible.
+- Parks/green: pale green with dark outline.
+- Buildings: warm white/light beige with 1px dark outline at close zoom.
+- Labels: dark ink; use bold sans for key places; minimize clutter.
+Controls:
+- Square zoom/geolocation/layer buttons, 2px black border, cream/yellow fill, 4px hard shadow.
+- Selected tool uses yellow/orange fill.
+Markers:
+- Use bold geometric markers: square, circle, pin, or badge with 2px black outline.
+- Selected marker increases size and uses yellow/orange plus hard shadow.
+- Clusters are solid colored circles/rectangles with black border and numeric label.
+Popups:
+- Cream/white panel, 2px black border, no default speech-bubble styling if avoidable; 5px hard shadow; clear close button.
+Choropleth:
+- Prefer 5-7 discrete classes using one ordered hue family or carefully chosen system colors.
+- Always include a framed legend with exact thresholds and units.
+Heat/intensity layers:
+- Prefer discrete cell/grid representations or stepped contours; avoid fuzzy neon heat-glow that conflicts with brutalism.
+Analytical overlays:
+- Selection boxes, buffers, catchments, and route lines use 2-4px hard strokes with explicit labels.
+- Keep map attribution visible and legally compliant.
+
+DASHBOARDS
+- Start with a strong page title and short descriptor.
+- First row: 3-5 KPI cards.
+- Second row: primary chart/map in a wide panel + secondary chart/table in a narrower panel.
+- Third row: detailed table, feed, or diagnostics.
+- Use accent colors to distinguish function, not decoration.
+- Avoid placing every card in a different color. Use 1-2 dominant accents per view.
+
+CONTENT / EDITORIAL PAGES
+- Use bold titles, framed metadata strips, pull quotes/callouts, strong dividers, and clear reading width.
+- For images/media, use 2px black frame and optional 5px hard shadow.
+- For long text, reduce visual aggression: cream canvas, black text, limited accents.
+
+ICONOGRAPHY
+- Use simple line or solid icons, 1.8-2.5px stroke.
+- Do not mix multiple icon families.
+- Icon buttons are square and framed.
+- Decorative icons must not substitute for text labels on critical controls.
+
+MOTION
+- Fast, physical and minimal: 100-180ms.
+- Animate translation and shadow depth for buttons/cards.
+- No slow floating, glowing, parallax-heavy, or bouncy animation.
+- Respect prefers-reduced-motion.
+
+ACCESSIBILITY / UX NON-NEGOTIABLES
+- WCAG AA contrast minimum for text and controls.
+- Visible keyboard focus everywhere.
+- Semantic heading hierarchy.
+- All form inputs have labels.
+- Icons used alone have aria-label/title.
+- Charts need accessible labels/summary or table fallback for important data.
+- Do not use color as the only indicator.
+- Preserve screen-reader landmarks and skip-link where appropriate.
+
+RESPONSIVE RULES
+- Do not scale the desktop UI down proportionally.
+- Reflow grids and navigation.
+- Remove decorative offsets/shadows if they cause horizontal overflow.
+- Tables: use responsive scroll container or convert to stacked data cards when appropriate.
+- Charts: maintain readable axis labels and minimum heights.
+- Maps: at least 360px height mobile, 480-640px desktop where they are primary.
+
+IMPLEMENTATION RULES
+- Prefer CSS variables and reusable classes/components over inline style duplication.
+- If pages share separate stylesheets, consolidate tokens into one design-system file and import it everywhere.
+- Preserve existing framework (plain HTML, Bootstrap, Tailwind, React-generated HTML, etc.) unless the task explicitly allows architectural migration.
+- If Bootstrap is present, override variables/components consistently rather than fighting individual elements.
+- If Tailwind is present, add a theme layer and reusable component classes.
+- For Chart.js/ECharts/Plotly/ApexCharts/D3: create one shared Neo-Brutalist chart theme/config helper.
+- For Leaflet/Mapbox/OpenLayers/ArcGIS: create one shared control/popup/marker style layer.
+- Do not break print/export functionality.
+- Remove obsolete CSS after migration only when you verify it is unused.
+
+PAGE-BY-PAGE PROCEDURE
+For every HTML page:
+A. Identify the page purpose and primary task.
+B. Apply the global app shell/navigation.
+C. Rebuild hierarchy using title -> summary/actions -> primary content -> supporting content.
+D. Replace generic rounded cards/buttons with the system components.
+E. Restyle charts, maps, tables, forms, filters, and modal states.
+F. Check empty/loading/error/success states.
+G. Verify mobile/tablet/desktop.
+H. Verify keyboard navigation and focus.
+I. Verify all original interactions still work.
+
+STRICT VISUAL QA
+Reject any page that contains:
+- soft drop shadows
+- gradient backgrounds
+- glassmorphism / backdrop blur
+- excessive 20px+ rounded corners
+- random pastel palette unrelated to tokens
+- unframed floating UI with weak hierarchy
+- inconsistent border widths
+- default browser/chart/map controls left unstyled when they are visually prominent
+- duplicated navigation patterns
+- broken responsive overflow
+- inaccessible contrast or focus states
+
+FINAL DELIVERABLES
+1. Updated HTML pages with all functionality preserved.
+2. One shared Neo-Brutalist design-system stylesheet (or equivalent framework theme).
+3. Shared chart theme/config.
+4. Shared map UI style/config where maps exist.
+5. A short CHANGELOG listing every redesigned page and major component.
+6. A QA report: routes tested, interactions tested, responsive widths tested, known issues.
+7. Do not stop after redesigning only the home/dashboard page. Convert the entire attached website.
+
+VISUAL TARGET
+The finished website should feel like a serious research/productivity tool redesigned through an editorial Neo-Brutalist lens: warm cream surfaces, assertive black frames, hard shadows, bright yellow/orange/cyan/pink/violet accents used deliberately, bold type, explicit controls, dense but legible dashboards, and consistent high-contrast interaction patterns. It must be visually distinctive without sacrificing usability, data accuracy, or professional credibility.

@@ -1,0 +1,10 @@
+{
+  "checked_at_utc": "2026-09-04T11:59:36+00:00",
+  "record_count": 751,
+  "unique_url_count": 447,
+  "reachable_record_count": 751,
+  "unreachable_record_count": 0,
+  "reachable_unique_url_count": 447,
+  "unreachable_unique_url_count": 0,
+  "definition": "Reachable means the catalogue landing URL returned HTTP 200-399 when checked; it does not prove data or licence validity."
+}

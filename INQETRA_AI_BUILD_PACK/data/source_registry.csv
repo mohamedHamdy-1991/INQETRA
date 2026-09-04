@@ -1,0 +1,18 @@
+source,adapter,homepage,api_or_catalogue,cadence,trust,notes
+National Data Library / data.gov.uk,CKAN,https://data.gov.uk,https://data.gov.uk/api/3/action/package_search?rows=0,Daily/weekly,Tier A,UK government catalogue; checked CKAN endpoint requires no key.
+Planning Data,REST/OpenAPI,https://www.planning.data.gov.uk,https://www.planning.data.gov.uk/docs,Daily,Tier A,Over 100 planning/housing datasets for England.
+ONS Open Geography Portal,ArcGIS Hub/REST,https://geoportal.statistics.gov.uk/,https://geoportal.statistics.gov.uk/,Weekly,Tier A,"Definitive ONS geographies, lookups, names/codes and postcode products."
+Ordnance Survey,Product catalogue / APIs,https://www.ordnancesurvey.co.uk/products/open-data,https://api.os.uk/,Weekly/monthly,Tier A,Separate open products from premium/licensed products.
+Digimap / EDINA,Metadata index / authenticated service,https://digimap.edina.ac.uk/,https://digimap.edina.ac.uk/help/our-maps-and-data/,Monthly metadata,Tier B restricted,Index metadata/deep links only unless licence explicitly permits more.
+Met Office HadUK-Grid,Static catalogue / CEDA,https://www.metoffice.gov.uk/research/climate/maps-and-data/data/haduk-grid/datasets,https://www.metoffice.gov.uk/research/climate/maps-and-data/data/haduk-grid/datasets,Annual + provisional monthly,Tier A,Variable/frequency/resolution partitions documented by source.
+Defra Data Services Platform,OGC/API/catalogue,https://environment.data.gov.uk/,https://environment.data.gov.uk/,Weekly,Tier A,Environment Agency and Defra environmental spatial data; resolve resource UUIDs through the portal before publishing.
+Historic England Open Data Hub,Open Data Hub/API,https://historicengland.org.uk/listing/the-list/data-downloads/,https://historicengland.org.uk/listing/the-list/data-downloads/,Weekly,Tier A,NHLE and other heritage GIS data.
+Energy Performance of Buildings Data,API/bulk,https://get-energy-performance-data.communities.gov.uk/,https://get-energy-performance-data.communities.gov.uk/,Monthly,Tier A with access conditions,Domestic/non-domestic EPC and DEC England/Wales.
+DESNZ subnational energy,GOV.UK collections,https://www.gov.uk/government/collections/sub-national-electricity-consumption-data,https://www.gov.uk/government/collections/sub-national-gas-consumption-data,Annual,Tier A,Electricity/gas geography tables.
+HM Land Registry,GOV.UK / linked data,https://www.gov.uk/government/statistical-data-sets/price-paid-data-downloads,https://www.gov.uk/government/statistical-data-sets/price-paid-data-downloads,Monthly,Tier A,Price Paid Data and identifier lookups.
+DfT Road Traffic,REST API,https://roadtraffic.dft.gov.uk/,https://roadtraffic.dft.gov.uk/api-documentation,Annual / ongoing,Tier A,Unauthenticated API.
+Police.uk,REST API / bulk,https://data.police.uk/,https://data.police.uk/docs/,Monthly,Tier A,"Street crime, outcomes, stop/search; OGL."
+Fingertips,JSON/CSV API,https://fingertips.phe.org.uk/,https://fingertips.phe.org.uk/profile/wider-determinants/data,Periodic,Tier A,Natural/built environment and wider determinants indicators.
+NISRA,Portal/download/API,https://www.nisra.gov.uk/,https://www.nisra.gov.uk/statistics/ni-summary-statistics/nisra-data-portal,Periodic,Tier A,"Northern Ireland census, geography and official statistics."
+Public Health Scotland Open Data,CKAN,https://www.opendata.nhs.scot/,https://www.opendata.nhs.scot/api/3/action/package_search?rows=0,Periodic,Tier A,Scottish health/social care open data; checked CKAN endpoint.
+DataMapWales,GeoNode/OGC,https://datamap.gov.wales/,https://datamap.gov.wales/,Periodic,Tier A/B,Welsh spatial data; licence per dataset.

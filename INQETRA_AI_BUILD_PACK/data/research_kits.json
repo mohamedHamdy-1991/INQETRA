@@ -1,0 +1,190 @@
+[
+  {
+    "slug": "urban-heat-island",
+    "title": "Urban Heat Island Mapping",
+    "questions": [
+      "How does urban form influence near-surface temperature across the study area?"
+    ],
+    "aims": [
+      "Quantify spatial/temporal heat variation",
+      "Test relationships with morphology/land cover"
+    ],
+    "methods": [
+      "GIS",
+      "Time-series",
+      "Spatial regression"
+    ],
+    "required_roles": [
+      "Study boundary",
+      "Climate / exposure",
+      "Built environment",
+      "Validation / reference"
+    ],
+    "recommended_domains": [
+      "Weather & Climate",
+      "Urban Morphology",
+      "Geospatial / GIS",
+      "Population & Demographics"
+    ]
+  },
+  {
+    "slug": "residential-overheating",
+    "title": "UK Residential Overheating",
+    "questions": [
+      "How do weather, dwelling characteristics and occupancy influence overheating risk?"
+    ],
+    "aims": [
+      "Define weather exposure",
+      "Characterise building stock",
+      "Evaluate overheating risk"
+    ],
+    "methods": [
+      "Building simulation",
+      "GIS",
+      "Statistical analysis"
+    ],
+    "required_roles": [
+      "Climate / exposure",
+      "Built environment",
+      "Outcome",
+      "Validation / reference"
+    ]
+  },
+  {
+    "slug": "housing-energy-vulnerability",
+    "title": "Housing Energy Vulnerability",
+    "questions": [
+      "Where do poor energy efficiency, low income and high energy need intersect?"
+    ],
+    "aims": [
+      "Map housing efficiency",
+      "Map socioeconomic vulnerability",
+      "Combine exposure and vulnerability"
+    ],
+    "methods": [
+      "GIS",
+      "Social analysis",
+      "Multi-criteria analysis"
+    ],
+    "required_roles": [
+      "Built environment",
+      "Population / demographics",
+      "Economic / policy",
+      "Climate / exposure"
+    ]
+  },
+  {
+    "slug": "building-stock-retrofit",
+    "title": "Building Stock Retrofit",
+    "questions": [
+      "Which building archetypes and places have greatest retrofit potential?"
+    ],
+    "aims": [
+      "Characterise stock",
+      "Estimate intervention potential",
+      "Prioritise areas"
+    ],
+    "methods": [
+      "Stock modelling",
+      "GIS",
+      "Cost-benefit analysis"
+    ],
+    "required_roles": [
+      "Built environment",
+      "Geometry",
+      "Economic / policy",
+      "Outcome"
+    ]
+  },
+  {
+    "slug": "walkability-accessibility",
+    "title": "Walkability & Accessibility",
+    "questions": [
+      "How accessible are essential destinations by walking and public transport?"
+    ],
+    "aims": [
+      "Construct network",
+      "Calculate catchments",
+      "Measure population access"
+    ],
+    "methods": [
+      "Network analysis",
+      "GIS"
+    ],
+    "required_roles": [
+      "Network",
+      "Mobility / accessibility",
+      "Population / demographics",
+      "Study boundary"
+    ]
+  },
+  {
+    "slug": "flood-housing-risk",
+    "title": "Flood Exposure & Housing",
+    "questions": [
+      "Which homes and communities are most exposed to current and future flood risk?"
+    ],
+    "aims": [
+      "Map hazard",
+      "Map buildings",
+      "Map vulnerability",
+      "Estimate intersection"
+    ],
+    "methods": [
+      "GIS",
+      "Risk analysis"
+    ],
+    "required_roles": [
+      "Climate / exposure",
+      "Built environment",
+      "Population / demographics",
+      "Topography / terrain"
+    ]
+  },
+  {
+    "slug": "health-built-environment",
+    "title": "Health & Built Environment",
+    "questions": [
+      "How are neighbourhood environmental conditions associated with population health indicators?"
+    ],
+    "aims": [
+      "Define neighbourhood exposures",
+      "Map health outcomes",
+      "Model associations"
+    ],
+    "methods": [
+      "GIS",
+      "Regression",
+      "Public-health analysis"
+    ],
+    "required_roles": [
+      "Population / demographics",
+      "Outcome",
+      "Built environment",
+      "Climate / exposure"
+    ]
+  },
+  {
+    "slug": "property-place-analysis",
+    "title": "Property & Place Analysis",
+    "questions": [
+      "How do location, accessibility and neighbourhood characteristics relate to property values?"
+    ],
+    "aims": [
+      "Build transaction dataset",
+      "Build place covariates",
+      "Estimate spatial relationships"
+    ],
+    "methods": [
+      "GIS",
+      "Spatial regression",
+      "Property-market analysis"
+    ],
+    "required_roles": [
+      "Economic / policy",
+      "Built environment",
+      "Mobility / accessibility",
+      "Population / demographics"
+    ]
+  }
+]

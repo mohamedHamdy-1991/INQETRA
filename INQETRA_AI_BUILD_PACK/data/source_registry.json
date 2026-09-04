@@ -1,0 +1,155 @@
+[
+  {
+    "source": "National Data Library / data.gov.uk",
+    "adapter": "CKAN",
+    "homepage": "https://data.gov.uk",
+    "api_or_catalogue": "https://data.gov.uk/api/3/action/package_search?rows=0",
+    "cadence": "Daily/weekly",
+    "trust": "Tier A",
+    "notes": "UK government catalogue; checked CKAN endpoint requires no key."
+  },
+  {
+    "source": "Planning Data",
+    "adapter": "REST/OpenAPI",
+    "homepage": "https://www.planning.data.gov.uk",
+    "api_or_catalogue": "https://www.planning.data.gov.uk/docs",
+    "cadence": "Daily",
+    "trust": "Tier A",
+    "notes": "Over 100 planning/housing datasets for England."
+  },
+  {
+    "source": "ONS Open Geography Portal",
+    "adapter": "ArcGIS Hub/REST",
+    "homepage": "https://geoportal.statistics.gov.uk/",
+    "api_or_catalogue": "https://geoportal.statistics.gov.uk/",
+    "cadence": "Weekly",
+    "trust": "Tier A",
+    "notes": "Definitive ONS geographies, lookups, names/codes and postcode products."
+  },
+  {
+    "source": "Ordnance Survey",
+    "adapter": "Product catalogue / APIs",
+    "homepage": "https://www.ordnancesurvey.co.uk/products/open-data",
+    "api_or_catalogue": "https://api.os.uk/",
+    "cadence": "Weekly/monthly",
+    "trust": "Tier A",
+    "notes": "Separate open products from premium/licensed products."
+  },
+  {
+    "source": "Digimap / EDINA",
+    "adapter": "Metadata index / authenticated service",
+    "homepage": "https://digimap.edina.ac.uk/",
+    "api_or_catalogue": "https://digimap.edina.ac.uk/help/our-maps-and-data/",
+    "cadence": "Monthly metadata",
+    "trust": "Tier B restricted",
+    "notes": "Index metadata/deep links only unless licence explicitly permits more."
+  },
+  {
+    "source": "Met Office HadUK-Grid",
+    "adapter": "Static catalogue / CEDA",
+    "homepage": "https://www.metoffice.gov.uk/research/climate/maps-and-data/data/haduk-grid/datasets",
+    "api_or_catalogue": "https://www.metoffice.gov.uk/research/climate/maps-and-data/data/haduk-grid/datasets",
+    "cadence": "Annual + provisional monthly",
+    "trust": "Tier A",
+    "notes": "Variable/frequency/resolution partitions documented by source."
+  },
+  {
+    "source": "Defra Data Services Platform",
+    "adapter": "OGC/API/catalogue",
+    "homepage": "https://environment.data.gov.uk/",
+    "api_or_catalogue": "https://environment.data.gov.uk/",
+    "cadence": "Weekly",
+    "trust": "Tier A",
+    "notes": "Environment Agency and Defra environmental spatial data; resolve resource UUIDs through the portal before publishing."
+  },
+  {
+    "source": "Historic England Open Data Hub",
+    "adapter": "Open Data Hub/API",
+    "homepage": "https://historicengland.org.uk/listing/the-list/data-downloads/",
+    "api_or_catalogue": "https://historicengland.org.uk/listing/the-list/data-downloads/",
+    "cadence": "Weekly",
+    "trust": "Tier A",
+    "notes": "NHLE and other heritage GIS data."
+  },
+  {
+    "source": "Energy Performance of Buildings Data",
+    "adapter": "API/bulk",
+    "homepage": "https://get-energy-performance-data.communities.gov.uk/",
+    "api_or_catalogue": "https://get-energy-performance-data.communities.gov.uk/",
+    "cadence": "Monthly",
+    "trust": "Tier A with access conditions",
+    "notes": "Domestic/non-domestic EPC and DEC England/Wales."
+  },
+  {
+    "source": "DESNZ subnational energy",
+    "adapter": "GOV.UK collections",
+    "homepage": "https://www.gov.uk/government/collections/sub-national-electricity-consumption-data",
+    "api_or_catalogue": "https://www.gov.uk/government/collections/sub-national-gas-consumption-data",
+    "cadence": "Annual",
+    "trust": "Tier A",
+    "notes": "Electricity/gas geography tables."
+  },
+  {
+    "source": "HM Land Registry",
+    "adapter": "GOV.UK / linked data",
+    "homepage": "https://www.gov.uk/government/statistical-data-sets/price-paid-data-downloads",
+    "api_or_catalogue": "https://www.gov.uk/government/statistical-data-sets/price-paid-data-downloads",
+    "cadence": "Monthly",
+    "trust": "Tier A",
+    "notes": "Price Paid Data and identifier lookups."
+  },
+  {
+    "source": "DfT Road Traffic",
+    "adapter": "REST API",
+    "homepage": "https://roadtraffic.dft.gov.uk/",
+    "api_or_catalogue": "https://roadtraffic.dft.gov.uk/api-documentation",
+    "cadence": "Annual / ongoing",
+    "trust": "Tier A",
+    "notes": "Unauthenticated API."
+  },
+  {
+    "source": "Police.uk",
+    "adapter": "REST API / bulk",
+    "homepage": "https://data.police.uk/",
+    "api_or_catalogue": "https://data.police.uk/docs/",
+    "cadence": "Monthly",
+    "trust": "Tier A",
+    "notes": "Street crime, outcomes, stop/search; OGL."
+  },
+  {
+    "source": "Fingertips",
+    "adapter": "JSON/CSV API",
+    "homepage": "https://fingertips.phe.org.uk/",
+    "api_or_catalogue": "https://fingertips.phe.org.uk/profile/wider-determinants/data",
+    "cadence": "Periodic",
+    "trust": "Tier A",
+    "notes": "Natural/built environment and wider determinants indicators."
+  },
+  {
+    "source": "NISRA",
+    "adapter": "Portal/download/API",
+    "homepage": "https://www.nisra.gov.uk/",
+    "api_or_catalogue": "https://www.nisra.gov.uk/statistics/ni-summary-statistics/nisra-data-portal",
+    "cadence": "Periodic",
+    "trust": "Tier A",
+    "notes": "Northern Ireland census, geography and official statistics."
+  },
+  {
+    "source": "Public Health Scotland Open Data",
+    "adapter": "CKAN",
+    "homepage": "https://www.opendata.nhs.scot/",
+    "api_or_catalogue": "https://www.opendata.nhs.scot/api/3/action/package_search?rows=0",
+    "cadence": "Periodic",
+    "trust": "Tier A",
+    "notes": "Scottish health/social care open data; checked CKAN endpoint."
+  },
+  {
+    "source": "DataMapWales",
+    "adapter": "GeoNode/OGC",
+    "homepage": "https://datamap.gov.wales/",
+    "api_or_catalogue": "https://datamap.gov.wales/",
+    "cadence": "Periodic",
+    "trust": "Tier A/B",
+    "notes": "Welsh spatial data; licence per dataset."
+  }
+]
