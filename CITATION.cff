@@ -1,0 +1,30 @@
+cff-version: 1.2.0
+title: INQETRA — research-design studio and UK built-environment dataset hub
+message: >-
+  If you use INQETRA in your research, please cite it using this metadata.
+type: software
+authors:
+  - name: Mohamed Hamdy Ali
+    email: M.HamdyMohamedAli3267@student.leedsbeckett.ac.uk
+    affiliation: Leeds Beckett University
+version: 0.2.2
+date-released: "2026-09-04"
+license: MIT
+repository-code: "https://github.com/mohamedHamdy-1991/INQETRA"
+url: "https://inqetra.vercel.app"
+abstract: >-
+  INQETRA is a web-based research-design studio and dataset hub for the UK built
+  environment. It links research problems, questions, aims, methods and dataset
+  requirements to a curated catalogue of 751 authoritative datasets, performs
+  rule-based compatibility and gap analysis, and exports reproducible, provenance-
+  traceable Research Data Plans. An optional provider-neutral AI assistant is
+  restricted to structuring deterministic tool outputs.
+keywords:
+  - research design
+  - open data
+  - built environment
+  - data management plan
+  - provenance
+  - energy
+  - housing
+  - climate
